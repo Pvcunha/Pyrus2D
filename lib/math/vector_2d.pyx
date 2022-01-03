@@ -36,8 +36,8 @@ cdef class Vector2D:  # TODO maybe give some bugs because of x and _x and x()
             self._x = x
             self._y = y
         elif vector2d is not None:
-            self._x = vector2d._x
-            self._y = vector2d._y
+            self._x = vector2d.x()
+            self._y = vector2d.y()
         else:
             self._x = 0
             self._y = 0
@@ -188,6 +188,11 @@ cdef class Vector2D:  # TODO maybe give some bugs because of x and _x and x()
             self._x += args[0]
             self._y += args[1]
 
+    def set_x(self, x):
+        self._x = x
+
+    def set_y(self, y):
+        self._y = y
     """
       \ brief scale this vector
       \ param scalar scaling factor

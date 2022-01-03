@@ -21,8 +21,8 @@ class BhvShhotGen(BhvKickGen):
         goal_l = Vector2D(SP.i().pitch_half_length(), -SP.i().goal_half_width())
         goal_r = Vector2D(SP.i().pitch_half_length(), +SP.i().goal_half_width())
 
-        goal_l._y += min(1.5, 0.6 + goal_l.dist(wm.ball().pos()) * 0.042)
-        goal_r._y -= min(1.5, 0.6 + goal_r.dist(wm.ball().pos()) * 0.042)
+        goal_l.add_y(min(1.5, 0.6 + goal_l.dist(wm.ball().pos()) * 0.042))
+        goal_r.add_y(-min(1.5, 0.6 + goal_r.dist(wm.ball().pos()) * 0.042))
 
         if wm.self().pos().x() > SP.i().pitch_half_length() - 1.0 and wm.self().pos().absY() < SP.i().goal_half_width():
             goal_l._x = wm.self().pos().x() + 1.5

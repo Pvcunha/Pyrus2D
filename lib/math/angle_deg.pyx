@@ -58,7 +58,7 @@ cdef class AngleDeg:
         return False
 
     def isLeftEqualOf(self, angle):
-        diff = angle.degree() - self._degree
+        diff = angle.degree() - self.degree()
         return 0.0 <= diff < 180.0 or diff < -180.0
 
     def degree(self):
@@ -74,14 +74,14 @@ cdef class AngleDeg:
         return self.degree() * DEG2RAD
 
     def reverse(self):
-        if self._degree >= 0:
-            self._degree = -(180 - self._degree)
+        if self.degree() >= 0:
+            self._degree = -(180 - self.degree())
             # Aref eh zeshte :))
             # 3 saat debug budam saresh :/
             # btw code che gonahi karde?
         else:
-            self._degree = 180 + self._degree
-        return self._degree
+            self._degree = 180 + self.degree()
+        return self.degree()
 
     def __iadd__(self, other):
         if type(other) == AngleDeg:
@@ -111,9 +111,9 @@ cdef class AngleDeg:
 
     def __add__(self, other):
         if type(other) == AngleDeg:
-            new_angle_deg = AngleDeg(self._degree + other.degree())
+            new_angle_deg = AngleDeg(self.degree() + other.degree())
         else:
-            new_angle_deg = AngleDeg(self._degree + other)
+            new_angle_deg = AngleDeg(self.degree() + other)
         return new_angle_deg
 
     def __sub__(self, other):
@@ -158,7 +158,7 @@ cdef class AngleDeg:
         return (0.0 < diff < 180.0) or diff < -180.0
 
     def copy(self):
-        return AngleDeg(self._degree)
+        return AngleDeg(self.degree())
 
     @staticmethod
     def rad2deg(rad):

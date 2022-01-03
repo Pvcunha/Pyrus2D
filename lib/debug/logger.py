@@ -85,7 +85,7 @@ class dlog:
         if cx is not None:
             dlog._commands += f"{dlog._time} {level.value} {'C' if fill else 'c'} {cx} {cy} {r} {color}\n"
         elif center is not None:
-            dlog.add_circle(level, r, center._x, center._y, color=color, fill=fill)
+            dlog.add_circle(level, r, center.x(), center.y(), color=color, fill=fill)
         elif cicle is not None:
             dlog.add_circle(level, cicle.radius(), cicle.center().x(), cicle.center().y(), fill=fill, color=color)
 

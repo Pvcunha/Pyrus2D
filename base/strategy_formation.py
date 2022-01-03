@@ -74,7 +74,7 @@ class _StrategyFormation:
         if self.current_formation is self.before_kick_off_formation or wm.game_mode().type() in \
                 [GameModeType.KickOff_Left, GameModeType.KickOff_Right]:
             for pos in self._poses:
-                pos._x = min(pos.x(), -0.5)
+                pos.set_x(min(pos.x(), -0.5))
         else:
             pass # Todo add offside line
             # for pos in self._poses:

@@ -85,9 +85,9 @@ cdef class Line2D:
                p1: Vector2D = None, p2: Vector2D = None,
                origin: Vector2D = None, linedir: AngleDeg = None):
         if p1 is not None and p2 is not None:
-            self._a = -(p2._y - p1._y)
-            self._b = p2._x - p1._x
-            self._c = -self._a * p1._x - self._b * p1._y
+            self._a = -(p2.y() - p1.y())
+            self._b = p2.x() - p1.x()
+            self._c = -self._a * p1.x() - self._b * p1.y()
             return self
         if origin is not None and linedir is not None:
             self._a = -linedir.sin()
