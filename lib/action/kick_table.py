@@ -359,7 +359,7 @@ class _KickTable:
 
         for i in range(len(angles)):
             self._tables.append(self.create_table(angles[i]))
-        exit()
+        # exit()
         return True
 
     """
