@@ -6,7 +6,7 @@ export PYTHONPATH="${PYTHONPATH}:`pwd`"
 
 i=1
 while [ $i -le 11 ] ; do
-    ./base/main_player.py &
+    python ./base/main_player.py &
     sleep 0.01
 
   i=`expr $i + 1`

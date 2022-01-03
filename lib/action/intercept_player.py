@@ -1,7 +1,8 @@
 from math import floor
 
 from lib.math.angle_deg import AngleDeg
-from lib.math.soccer_math import bound, inertia_n_step_point
+from lib.math.soccer_math import inertia_n_step_point
+from lib.math.soccer_math import *
 from lib.math.vector_2d import Vector2D
 from lib.player.object_player import PlayerObject
 from lib.player.templates import WorldModel

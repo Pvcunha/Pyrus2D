@@ -13,8 +13,10 @@ from lib.player.world_model import WorldModel
 from lib.rcsc.player_type import PlayerType
 from lib.rcsc.server_param import ServerParam
 from lib.math.soccer_math import *
+from lib.math.angle_deg import AngleDeg
+from lib.math.vector_2d import Vector2D
 from lib.rcsc.game_time import *
-
+import math
 """
       \ brief compare operation function
       \ param item1 left hand side variable
@@ -351,12 +353,13 @@ class _KickTable:
         angle_step = 360.0 / DEST_DIR_DIVS
         angles = [AngleDeg(-180 + i * angle_step) for i in range(DEST_DIR_DIVS)]
         # TODO this functions should be checked
-        from multiprocessing import Pool
-        pool = Pool(4)
-        self._tables = pool.map(self.create_table, angles)
+        # from multiprocessing import Pool
+        # pool = Pool(4)
+        # self._tables = pool.map(self.create_table, angles)
 
-        # for i in range(len(angles)):
-        #     self._tables.append(self.create_table(angles[i]))
+        for i in range(len(angles)):
+            self._tables.append(self.create_table(angles[i]))
+        exit()
         return True
 
     """

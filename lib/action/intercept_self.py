@@ -7,7 +7,7 @@ from lib.debug.logger import dlog
 from lib.math.angle_deg import AngleDeg
 from lib.math.line_2d import Line2D
 from lib.math.segment_2d import Segment2D
-from lib.math.soccer_math import bound, frange, calc_first_term_geom_series, min_max
+from lib.math.soccer_math import *#bound, frange, calc_first_term_geom_series, min_max
 from lib.math.vector_2d import Vector2D
 from lib.player.object_ball import BallObject
 from lib.player.object_player import PlayerObject
